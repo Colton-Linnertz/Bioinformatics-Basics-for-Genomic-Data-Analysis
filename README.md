@@ -1,4 +1,4 @@
-<p># Bioinformatics Basics for Genomic Data Analysis<br>
+# Bioinformatics Basics for Genomic Data Analysis<br>
 # ===============================================<p>
 
 **A collection of command-line examples that can be built into scripts to process genomics data**
