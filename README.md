@@ -26,13 +26,15 @@ java -jar -Xmx48g -XX:ParallelGCThreads=12 /path/to/picard.jar BuildBamIndex INP
 ```
 
 ### BAM alignment stats:
-<p># make directory: /stats/ to output all stats<p></p>
+<p># make directory: /stats/ to output all stats<p>
+
 ```bash
 samtools flagstat "${sample}.bam" > "./stats/${sample}.flagstats"
 ```
 
 ### bam2fasta:
-##### # fasta header will be the QNAME (Query Name)
+<p># fasta header will be the QNAME (Query Name)<p>
+
 ```bash
 samtools view "${sample}.bam" | awk '{OFS="\t"; print ">"$1"\n"$10}' - > "${sample}.fa"
 ```
@@ -43,8 +45,9 @@ samtools fastq "${sample}.bam" > "${sample}.fastq" && gzip "${sample}.fastq"
 ```
 
 ### Merge sorted BAMs from the same sample
-##### # merge multiple lanes or different sequencing runs
-##### # run this as a script instead of on the command-line
+<p># merge multiple lanes or different sequencing runs<br>
+# run this as a script instead of on the command-line<p>
+
 ```bash
 java -jar -Xmx24g -XX:ParallelGCThreads=12 /path/to/picard.jar MergeSamFiles \
 	      I="${sample}_${lane1}.sorted.bam" \
